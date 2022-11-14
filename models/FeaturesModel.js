@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const FeaturesModel = mongoose.model(
-    "bugsTracker",
+    "FeaturesModel",
     {
         id: {
             type: Number,
