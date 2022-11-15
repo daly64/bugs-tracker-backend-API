@@ -2,10 +2,6 @@ const mongoose = require("mongoose")
 const BugsModel = mongoose.model(
     "BugsModel",
     {
-        id: {
-            type: Number,
-            required: true,
-        },
         description: {
             type: String,
             required: true,

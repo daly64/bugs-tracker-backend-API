@@ -2,10 +2,6 @@ const mongoose = require("mongoose")
 const ProjectsModel = mongoose.model(
     "ProjectsModel",
     {
-        id: {
-            type: Number,
-            required: true,
-        },
         name: {
             type: String,
             required: true,

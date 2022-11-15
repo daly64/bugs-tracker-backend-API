@@ -2,10 +2,6 @@ const mongoose = require("mongoose")
 const FeaturesModel = mongoose.model(
     "FeaturesModel",
     {
-        id: {
-            type: Number,
-            required: true,
-        },
         description: {
             type: String,
             required: true,
