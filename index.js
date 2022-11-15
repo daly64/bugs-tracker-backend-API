@@ -13,8 +13,7 @@ const projectsController = require("./routes/projectsController")
 
 const mongoose = require("mongoose");
 
-// const onlineUrl = "mongodb+srv://daly:Dd123123Dd@cluster1.ktvz4ok.mongodb.net/bugsTracker"
-const onlineUrl = "/"
+const onlineUrl = "mongodb+srv://daly:Dd123123Dd@cluster1.ktvz4ok.mongodb.net/bugsTracker"
 let data_base_status = ''
 mongoose.connect(
     onlineUrl,
