@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 
 const onlineUrl = "mongodb+srv://daly:Dd123123Dd@cluster1.ktvz4ok.mongodb.net/bugsTracker"
-
-// const localUrl = "mongodb://localhost:27017/node-api"
+// const onlineUrl = "/"
 mongoose.connect(
     onlineUrl,
     {
@@ -14,3 +13,5 @@ mongoose.connect(
         else console.log(`connection error : ${error.message}`)
     }
 )
+
+
