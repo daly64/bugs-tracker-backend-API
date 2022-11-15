@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors")
 
-const port = 5500
+const port = process.env.PORT || 5500
 require("./dbConfig")
 
 const bugsController = require("./routes/bugsController")
