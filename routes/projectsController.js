@@ -26,6 +26,7 @@ router.post("/", (req, res) => {
         description: req.body.description,
         bugs: req.body.bugs,
         features: req.body.features,
+        status: req.body.status,
         progress: req.body.progress
     })
     newRecord.save((err, docs) => {
@@ -42,6 +43,7 @@ router.put("/:id", (req, res) => {
         description: req.body.description,
         bugs: req.body.bugs,
         features: req.body.features,
+        status: req.body.status,
         progress: req.body.progress
     }
 

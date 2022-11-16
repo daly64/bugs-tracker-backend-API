@@ -18,6 +18,11 @@ const ProjectsModel = mongoose.model(
             type: Array,
             required: true,
         },
+        status: {
+            type: String,
+            required: true,
+            default: 'In progress'
+        },
         progress: {
             type: Number,
             default: false,
