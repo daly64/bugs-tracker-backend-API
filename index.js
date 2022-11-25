@@ -27,12 +27,8 @@ app.get('/', function (req, res) {
 <h2><a href="/bugs"> /bugs </a></h2>
 <h2><a href="/features"> /features </a></h2>
 <h2><a href="/projects"> /projects </a></h2>
-
-
 </body>
-</html>
-    
-    
+</html>    
     `)
 })
 
