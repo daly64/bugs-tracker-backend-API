@@ -34,7 +34,8 @@ app.use(bodyParser.json())
 
 app.use("/bugs", bugsController)
 app.use("/features", featuresController)
-app.use("/projects", projectsController)
+// app.use("/projects", projectsController)
+app.use("/", projectsController)
 
 // on ouvre l'accès a tout le monde
 app.use(cors())
