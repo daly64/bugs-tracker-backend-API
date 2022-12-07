@@ -13,7 +13,7 @@ const projectsController = require("./routes/projectsController")
 
 app.use(bodyParser.json())
 
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
     res.send(`
     <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 </body>
 </html>    
     `)
-})
+})*/
 
 app.use("/bugs", bugsController)
 app.use("/features", featuresController)
