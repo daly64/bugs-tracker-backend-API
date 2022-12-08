@@ -3,6 +3,8 @@ const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors")
 
+// on ouvre l'accès a tout le monde
+app.use(cors())
 const port = process.env.PORT || 5500
 require("./dbConfig")
 
@@ -35,13 +37,6 @@ app.get('/', function (req, res) {
 app.use("/bugs", bugsController)
 app.use("/features", featuresController)
 app.use("/projects", projectsController)
-
-// on ouvre l'accès a tout le monde
-app.use(cors())
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
 
 let serverStatus = ''
 
