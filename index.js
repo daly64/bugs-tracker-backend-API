@@ -13,7 +13,7 @@ const projectsController = require("./routes/projectsController")
 
 app.use(bodyParser.json())
 
-/*app.get('/', function (req, res) {
+app.get('/', function (req, res) {
     res.send(`
     <!DOCTYPE html>
 <html lang="en">
@@ -30,12 +30,11 @@ app.use(bodyParser.json())
 </body>
 </html>    
     `)
-})*/
+})
 
 app.use("/bugs", bugsController)
 app.use("/features", featuresController)
-// app.use("/projects", projectsController)
-app.use("/", projectsController)
+app.use("/projects", projectsController)
 
 // on ouvre l'accès a tout le monde
 app.use(cors())
