@@ -11,10 +11,10 @@ router.get("/", (req, res) => {
 })
 
 router.get("/:id", (req, res) => {
-    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params.id}`)
+    if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
 
     ProjectsModel.findOne()
-    ProjectsModel.findById(req.params.id, (err, docs) => {
+    ProjectsModel.findById(req.params._id, (err, docs) => {
         if (!err) res.send(docs)
         else console.log(`error find : ${err}`)
     })
@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const newRecord = new ProjectsModel({
-        name: req.body.description,
+        name: req.body.name,
         description: req.body.description,
         bugs: req.body.bugs,
         features: req.body.features,
@@ -36,10 +36,10 @@ router.post("/", (req, res) => {
 })
 
 router.put("/:id", (req, res) => {
-    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params.id}`)
+    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
 
     const updateRecord = {
-        name: req.body.description,
+        name: req.body.name,
         description: req.body.description,
         bugs: req.body.bugs,
         features: req.body.features,
@@ -48,7 +48,7 @@ router.put("/:id", (req, res) => {
     }
 
     ProjectsModel.findByIdAndUpdate(
-        req.params.id,
+        req.params._id,
         {$set: updateRecord},
         {new: true},
         (err, docs) => {
