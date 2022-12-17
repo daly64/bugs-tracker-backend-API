@@ -15,7 +15,7 @@ const FeaturesModel = mongoose.model(
             default: false,
         },
         projectId: {
-            type: Number,
+            type: String,
             required: true,
         },
     },
