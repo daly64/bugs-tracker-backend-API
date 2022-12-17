@@ -2,6 +2,10 @@ const mongoose = require("mongoose")
 const FeaturesModel = mongoose.model(
     "FeaturesModel",
     {
+        title: {
+            type: String,
+            required: true,
+        },
         description: {
             type: String,
             required: true,
@@ -9,6 +13,10 @@ const FeaturesModel = mongoose.model(
         developed: {
             type: Boolean,
             default: false,
+        },
+        projectId: {
+            type: Number,
+            required: true,
         },
     },
     "features"
