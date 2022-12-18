@@ -50,7 +50,7 @@ router.put("/:id", (req, res) => {
     }
 
     ProjectsModel.findByIdAndUpdate(
-        req.params._id,
+        req.params.id,
         {$set: updateRecord},
         {new: true},
         (err, docs) => {

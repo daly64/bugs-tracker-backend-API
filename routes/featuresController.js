@@ -48,7 +48,7 @@ router.put("/:id", (req, res) => {
     }
 
     FeaturesModel.findByIdAndUpdate(
-        req.params._id,
+        req.params.id,
         {$set: updateRecord},
         {new: true},
         (err, docs) => {
