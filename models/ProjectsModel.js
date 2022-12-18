@@ -4,7 +4,6 @@ const ProjectsModel = mongoose.model(
     {
         index: {
             type: Number,
-            default: Date.now(),
         },
         name: {
             type: String,

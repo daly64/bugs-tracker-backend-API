@@ -4,7 +4,6 @@ const FeaturesModel = mongoose.model(
     {
         index: {
             type: Number,
-            default: Date.now(),
         },
         title: {
             type: String,
