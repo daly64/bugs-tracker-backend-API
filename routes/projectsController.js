@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const newRecord = new ProjectsModel({
-        id: req.body.id,
+        index: req.body.index,
         name: req.body.name,
         description: req.body.description,
         bugs: req.body.bugs,
@@ -37,10 +37,10 @@ router.post("/", (req, res) => {
 })
 
 router.put("/:id", (req, res) => {
-    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
+    if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
 
     const updateRecord = {
-        id: req.body.id,
+        index: req.body.index,
         name: req.body.name,
         description: req.body.description,
         bugs: req.body.bugs,
@@ -50,7 +50,7 @@ router.put("/:id", (req, res) => {
     }
 
     ProjectsModel.findByIdAndUpdate(
-        req.params.id,
+        req.params._id,
         {$set: updateRecord},
         {new: true},
         (err, docs) => {
@@ -60,8 +60,8 @@ router.put("/:id", (req, res) => {
     )
 })
 router.delete("/:id", (req, res) => {
-    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params.id}`)
-    ProjectsModel.findByIdAndDelete(req.params.id, (err, docs) => {
+    if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
+    ProjectsModel.findByIdAndDelete(req.params._id, (err, docs) => {
         if (!err) res.send(docs)
         else console.log(`delete error : ${err}`)
     })

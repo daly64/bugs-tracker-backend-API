@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const FeaturesModel = mongoose.model(
     "FeaturesModel",
     {
-        id: {
+        index: {
             type: Number,
             default: Date.now(),
         },

@@ -40,7 +40,7 @@ router.put("/:id", (req, res) => {
     if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
 
     const updateRecord = {
-        id: req.body.id,
+        index: req.body.index,
         title: req.body.title,
         description: req.body.description,
         developed: req.body.developed,
@@ -48,7 +48,7 @@ router.put("/:id", (req, res) => {
     }
 
     FeaturesModel.findByIdAndUpdate(
-        req.params.id,
+        req.params._id,
         {$set: updateRecord},
         {new: true},
         (err, docs) => {

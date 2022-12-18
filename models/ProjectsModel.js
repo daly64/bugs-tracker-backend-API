@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const ProjectsModel = mongoose.model(
     "ProjectsModel",
     {
-        id: {
+        index: {
             type: Number,
             default: Date.now(),
         },
