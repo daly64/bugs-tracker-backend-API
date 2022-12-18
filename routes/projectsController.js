@@ -60,8 +60,8 @@ router.put("/:id", (req, res) => {
     )
 })
 router.delete("/:id", (req, res) => {
-    if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
-    ProjectsModel.findByIdAndDelete(req.params._id, (err, docs) => {
+    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params.id}`)
+    ProjectsModel.findByIdAndDelete(req.params.id, (err, docs) => {
         if (!err) res.send(docs)
         else console.log(`delete error : ${err}`)
     })
