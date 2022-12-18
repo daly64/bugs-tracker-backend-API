@@ -22,9 +22,13 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const newRecord = new FeaturesModel({
+        title: req.body.title,
         description: req.body.description,
-        developed: req.body.developed
+        developed: req.body.developed,
+        projectId: req.body.projectId,
     })
+
+
     newRecord.save((err, docs) => {
         if (!err) res.send(docs)
         else console.log(`error creating new data : ${err}`)
@@ -35,8 +39,10 @@ router.put("/:id", (req, res) => {
     if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
 
     const updateRecord = {
+        title: req.body.title,
         description: req.body.description,
-        developed: req.body.developed
+        developed: req.body.developed,
+        projectId:req.body.projectId ,
     }
 
     FeaturesModel.findByIdAndUpdate(
