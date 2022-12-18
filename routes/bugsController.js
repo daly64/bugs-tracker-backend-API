@@ -37,7 +37,7 @@ router.post("/", (req, res) => {
 })
 
 router.put("/:id", (req, res) => {
-    if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
+    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params.id}`)
 
     const updateRecord = {
         index: req.body.index,
@@ -58,7 +58,7 @@ router.put("/:id", (req, res) => {
     )
 })
 router.delete("/:id", (req, res) => {
-    if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
+    if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params.id}`)
     BugsModel.findByIdAndDelete(req.params._id, (err, docs) => {
         if (!err) res.send(docs)
         else console.log(`delete error : ${err}`)
