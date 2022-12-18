@@ -22,6 +22,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const newRecord = new ProjectsModel({
+        id: req.body.id,
         name: req.body.name,
         description: req.body.description,
         bugs: req.body.bugs,
@@ -39,6 +40,7 @@ router.put("/:id", (req, res) => {
     if (!ObjectID.isValid(req.params.id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
 
     const updateRecord = {
+        id: req.body.id,
         name: req.body.name,
         description: req.body.description,
         bugs: req.body.bugs,
@@ -48,7 +50,7 @@ router.put("/:id", (req, res) => {
     }
 
     ProjectsModel.findByIdAndUpdate(
-        req.params._id,
+        req.params.id,
         {$set: updateRecord},
         {new: true},
         (err, docs) => {

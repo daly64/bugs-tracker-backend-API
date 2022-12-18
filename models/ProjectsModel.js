@@ -2,17 +2,21 @@ const mongoose = require("mongoose")
 const ProjectsModel = mongoose.model(
     "ProjectsModel",
     {
+        id: {
+            type: Number,
+            default: Date.now(),
+        },
         name: {
             type: String,
-            required: true,
+            required: false,
         },
         description: {
             type: String,
-            required: true,
+            required: false,
         },
         bugs: {
             type: Array,
-            required: true,
+            required: false,
         },
         resolvedBugs: {
             type: Number,
@@ -24,7 +28,7 @@ const ProjectsModel = mongoose.model(
         },
         features: {
             type: Array,
-            required: true,
+            required: false,
         },
         developedFeatures: {
             type: Number,
@@ -36,7 +40,7 @@ const ProjectsModel = mongoose.model(
         },
         status: {
             type: String,
-            required: true,
+            required: false,
             default: 'In progress'
         },
         progress: {

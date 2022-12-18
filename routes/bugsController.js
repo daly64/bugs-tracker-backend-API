@@ -22,6 +22,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const newRecord = new BugsModel({
+        id: req.body.id,
         title: req.body.title,
         description: req.body.description,
         resolved: req.body.resolved,
@@ -39,6 +40,7 @@ router.put("/:id", (req, res) => {
     if (!ObjectID.isValid(req.params._id)) return res.status(400).send(`Unknown id  ${req.params._id}`)
 
     const updateRecord = {
+        id: req.body.id,
         title: req.body.title,
         description: req.body.description,
         resolved: req.body.resolved,
@@ -46,7 +48,7 @@ router.put("/:id", (req, res) => {
     }
 
     BugsModel.findByIdAndUpdate(
-        req.params._id,
+        req.params.id,
         {$set: updateRecord},
         {new: true},
         (err, docs) => {

@@ -2,6 +2,10 @@ const mongoose = require("mongoose")
 const BugsModel = mongoose.model(
     "BugsModel",
     {
+        id: {
+            type: Number,
+            default: Date.now(),
+        },
         title: {
             type: String,
             default: '',

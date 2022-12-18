@@ -2,6 +2,10 @@ const mongoose = require("mongoose")
 const FeaturesModel = mongoose.model(
     "FeaturesModel",
     {
+        id: {
+            type: Number,
+            default: Date.now(),
+        },
         title: {
             type: String,
             default: '',
