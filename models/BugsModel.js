@@ -4,11 +4,11 @@ const BugsModel = mongoose.model(
     {
         title: {
             type: String,
-            required: true,
+            default: '',
         },
         description: {
             type: String,
-            required: true,
+            default: '',
         },
         resolved: {
             type: Boolean,
@@ -16,7 +16,7 @@ const BugsModel = mongoose.model(
         },
         projectId: {
             type: String,
-            required: true,
+            default: '',
         },
     },
     "bugs"

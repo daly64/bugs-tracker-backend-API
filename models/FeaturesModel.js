@@ -4,11 +4,11 @@ const FeaturesModel = mongoose.model(
     {
         title: {
             type: String,
-            required: true,
+            default: '',
         },
         description: {
             type: String,
-            required: true,
+            default: '',
         },
         developed: {
             type: Boolean,
@@ -16,7 +16,7 @@ const FeaturesModel = mongoose.model(
         },
         projectId: {
             type: String,
-            required: true,
+            default: '',
         },
     },
     "features"
