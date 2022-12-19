@@ -2,9 +2,6 @@ const mongoose = require("mongoose")
 const BugsModel = mongoose.model(
     "BugsModel",
     {
-        index: {
-            type: Number,
-        },
         title: {
             type: String,
             default: '',
@@ -20,6 +17,9 @@ const BugsModel = mongoose.model(
         projectId: {
             type: String,
             default: '',
+        },
+        index: {
+            type: Number,
         },
     },
     "bugs"

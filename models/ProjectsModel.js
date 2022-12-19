@@ -2,9 +2,6 @@ const mongoose = require("mongoose")
 const ProjectsModel = mongoose.model(
     "ProjectsModel",
     {
-        index: {
-            type: Number,
-        },
         name: {
             type: String,
             required: false,
@@ -45,6 +42,9 @@ const ProjectsModel = mongoose.model(
         progress: {
             type: Number,
             default: false,
+        },
+        index: {
+            type: Number,
         },
     },
     "projects"
