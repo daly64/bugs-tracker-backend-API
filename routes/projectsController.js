@@ -28,7 +28,11 @@ router.post("/", (req, res) => {
         bugs: req.body.bugs,
         features: req.body.features,
         status: req.body.status,
-        progress: req.body.progress
+        progress: req.body.progress,
+        resolvedBugs: req.body.resolvedBugs,
+        unResolvedBugs: req.body.unResolvedBugs,
+        developedFeatures: req.body.developedFeatures,
+        unDevelopedFeatures: req.body.unDevelopedFeatures,
     })
     newRecord.save((err, docs) => {
         if (!err) res.send(docs)
@@ -46,7 +50,11 @@ router.put("/:id", (req, res) => {
         bugs: req.body.bugs,
         features: req.body.features,
         status: req.body.status,
-        progress: req.body.progress
+        progress: req.body.progress,
+        resolvedBugs: req.body.resolvedBugs,
+        unResolvedBugs: req.body.unResolvedBugs,
+        developedFeatures: req.body.developedFeatures,
+        unDevelopedFeatures: req.body.unDevelopedFeatures,
     }
 
     ProjectsModel.findByIdAndUpdate(
