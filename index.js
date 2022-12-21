@@ -3,7 +3,8 @@ const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors")
 
-app.use(cors())
+// app.use(cors())
+app.use(cors({origin: '*'}))
 const port = process.env.PORT || 5500
 require("./dbConfig")
 
