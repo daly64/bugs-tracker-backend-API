@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const newRecord = new FeaturesModel({
-        id: req.body.id,
+        index: req.body.index,
         title: req.body.title,
         description: req.body.description,
         developed: req.body.developed,
